@@ -1,9 +1,13 @@
+// src/App.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from './components/Navbar';
+import Timeline from './components/Timeline';
 import './App.css';
 
 function App() {
   const [events, setEvents] = useState([]);
+  const [selectedSaga, setSelectedSaga] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,21 +22,15 @@ function App() {
     fetchData();
   }, []);
 
+  const handleSagaChange = saga => {
+    setSelectedSaga(saga);
+    // Adicione lógica para filtrar eventos com base na saga selecionada, se necessário
+  };
+
   return (
     <div>
-      <h1>Eventos da Marvel</h1>
-      <ul>
-        {events.map(event => (
-          <li key={event.id}>
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
-            <strong>Data de Início:</strong> {event.start}
-            <br />
-            <strong>Data de Fim:</strong> {event.end}
-            <hr />
-          </li>
-        ))}
-      </ul>
+      <Navbar onSagaChange={handleSagaChange} selectedSaga={selectedSaga} />
+      <Timeline events={events} />
     </div>
   );
 }

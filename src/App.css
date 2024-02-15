@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
-}
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+@import './App.input.css';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Adicione estilos do Tailwind CSS abaixo, se necessário */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #f0f0f0;
+  font-family: 'Marvel', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  border-bottom: 2px solid #ed1d24;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: translateY(1px);
 }

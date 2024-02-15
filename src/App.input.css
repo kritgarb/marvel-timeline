@@ -1,0 +1,27 @@
+/* src/App.input.css */
+h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #3b82f6;
+}
+
+hr {
+  margin: 1rem 0;
+  border-top: 0.125rem solid #d1d5db;
+}

@@ -1,0 +1,33 @@
+/* src/App.css */
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px
+}
+
+li {
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    padding: 1rem
+}
+
+strong {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-top-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity))
+}
