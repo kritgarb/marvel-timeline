@@ -1,38 +1,42 @@
-// src/App.js
+// App.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Navbar from './components/Navbar';
-import Timeline from './components/Timeline';
-import './App.css';
 
-function App() {
+const App = () => {
   const [events, setEvents] = useState([]);
-  const [selectedSaga, setSelectedSaga] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/important-events'); // Atualize a URL da requisição
+      console.log('Dados recebidos:', response.data);
+      setEvents(response.data.data.results); // Atualize o estado do componente com os eventos recebidos
+    } catch (error) {
+      console.error('Erro ao obter eventos:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/events');
-        setEvents(response.data.data.results);
-      } catch (error) {
-        console.error('Erro ao obter eventos:', error.message);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const handleSagaChange = saga => {
-    setSelectedSaga(saga);
-    // Adicione lógica para filtrar eventos com base na saga selecionada, se necessário
-  };
+    fetchData(); // Chame a função de busca de dados quando o componente montar
+  }, []); // O array vazio assegura que useEffect será executado apenas uma vez
 
   return (
     <div>
-      <Navbar onSagaChange={handleSagaChange} selectedSaga={selectedSaga} />
-      <Timeline events={events} />
+      <h1>Seu Título</h1>
+      <nav>
+        {/* Sua barra de navegação */}
+      </nav>
+      <div>
+        {/* Renderize seus eventos aqui */}
+        {events.map(event => (
+          <div key={event.id}>
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
