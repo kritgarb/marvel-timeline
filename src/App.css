@@ -1,37 +1,45 @@
-/* src/App.css */
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
-@import './App.input.css';
-
-/* Adicione estilos do Tailwind CSS abaixo, se necessário */
-
-body {
-  background-color: #f0f0f0;
-  font-family: 'Marvel', sans-serif;
-  margin: 0;
-  padding: 0;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column; 
+  justify-content: space-between;
 }
 
-nav {
-  border-bottom: 2px solid #ed1d24;
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-button {
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  cursor: pointer;
+.card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 30%;  
+  box-sizing: border-box;  
 }
 
-button:hover {
-  transform: translateY(-2px);
+.card .event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-button:focus {
-  outline: none;
+.card .event-details {
+  padding: 20px;
 }
 
-button:active {
-  transform: translateY(1px);
+.card .event-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card .event-description {
+  font-size: 1rem;
+  color: #555;
 }
